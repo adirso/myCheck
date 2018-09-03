@@ -51,7 +51,7 @@ class myCheckController extends BaseController
      */
     private function fetchItem(int $id): array
     {
-        $baseUrl = env ( 'API_URL' );
+        $baseUrl = config('api.url');
         $client = new Client();
         $res = $client->get ( "{$baseUrl}?item={$id}" );
         return json_decode ( $res->getBody (), 1 );
